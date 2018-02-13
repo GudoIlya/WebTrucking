@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TruckingServer.context;
 
 namespace TruckingServer
 {
@@ -24,6 +26,9 @@ namespace TruckingServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<TruckingContext>(options =>
+                options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
