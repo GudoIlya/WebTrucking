@@ -16,5 +16,8 @@ namespace TruckingServer.Models
         public string lastName { get; set; }
 
         public DateTime birthday { get; set; }
+
+        public Driver()
+        { }
     }
 }

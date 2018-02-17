@@ -24,5 +24,8 @@ namespace TruckingServer.Models
         public Car Car { get; set; }
 
         public Company Company { get; set; }
+
+        public Contract()
+        { }
     }
 }

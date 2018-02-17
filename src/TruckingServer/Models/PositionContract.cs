@@ -14,5 +14,8 @@ namespace TruckingServer.Models
         public double weignt { get; set; }
 
         public Cargo Cargo { get; set; }
+
+        public PositionContract()
+        { }
     }
 }

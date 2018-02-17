@@ -8,7 +8,7 @@ namespace TruckingServer.Models
 {
     [Table("Car")]
     public class Car
-    {
+    {        
         public int carID { get; set; }
 
         public string model { get; set; }
@@ -18,5 +18,7 @@ namespace TruckingServer.Models
         public DateTime birthday { get; set; }
 
         public double carryCapacity { get; set; }
+
+        public Car() { }
     }
 }

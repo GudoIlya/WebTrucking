@@ -16,5 +16,8 @@ namespace TruckingServer.Models
         public bool isKeepUpTemperatures { get; set; }
 
         public double temperatures { get; set; }
+
+        public Cargo()
+        { }
     }
 }
