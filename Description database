@@ -1,0 +1,50 @@
+Для просмотра схемы:
+1) Перейти на https://start.jhipster.tech/jdl-studio/
+2) Скопировать и вставать код.
+3) Посмотреть.
+
+//Схема только разрабатывается
+entity Car {
+	carID Int,
+    model String,
+    civicNumber String,
+    birthday Date,
+    carryCapacity Double
+    }
+entity Cargo{
+	cargoID Int,
+    name String,
+    isKeepUpTemperatures Bool,
+    temperatures Double
+}
+
+entity Company{
+	companyID Int,
+    name String,
+    adress String
+}
+
+entity Contract {
+	contractID Int,
+    num String,
+    date DateTime,
+    price Decimal,
+    isOurCar Bool
+}
+
+entity Driver{
+	driverID Int,
+ 	firstName String,
+    lastName String,
+    birthday Date
+}
+
+
+relationship OneToOne{
+  Contract to Company
+}
+relationship OneToMany {
+	Contract to Car,
+    Contract to Driver,
+    Contract to Cargo
+    }
